@@ -1,6 +1,6 @@
 {
   "name": "@cryptoapis-io/mcp-prepare-transactions",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "MCP server for building unsigned transactions on multiple blockchains via Crypto APIs",
   "license": "MIT",
   "author": "Crypto APIs, Inc.",
