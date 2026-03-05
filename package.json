@@ -1,6 +1,6 @@
 {
   "name": "@cryptoapis-io/mcp-prepare-transactions",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "MCP server for building unsigned transactions on multiple blockchains via Crypto APIs",
   "license": "MIT",
   "author": "Crypto APIs, Inc.",
@@ -8,6 +8,7 @@
     "type": "git",
     "url": "https://github.com/CryptoAPIs-io/cryptoapis-mcp-prepare-transactions.git"
   },
+  "mcpName": "io.github.CryptoAPIs-io/mcp-prepare-transactions",
   "keywords": [
     "mcp",
     "cryptoapis",
@@ -23,7 +24,8 @@
   "types": "dist/index.d.ts",
   "files": [
     "dist",
-    "README.md"
+    "README.md",
+    "server.json"
   ],
   "bin": {
     "cryptoapis-mcp-prepare-transactions": "dist/cli.js"
