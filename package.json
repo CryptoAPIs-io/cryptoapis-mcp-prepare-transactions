@@ -1,6 +1,6 @@
 {
   "name": "@cryptoapis-io/mcp-prepare-transactions",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "MCP server for building unsigned transactions on multiple blockchains via Crypto APIs",
   "license": "MIT",
   "author": "Crypto APIs, Inc.",
@@ -32,8 +32,8 @@
   },
   "dependencies": {
     "@cryptoapis-io/mcp-shared": "workspace:*",
-    "@modelcontextprotocol/sdk": "^1.25.1",
-    "express": "^4.19.2",
+    "@modelcontextprotocol/sdk": "^1.27.1",
+    "express": "^4.22.1",
     "zod": "^3.25.0"
   },
   "scripts": {
