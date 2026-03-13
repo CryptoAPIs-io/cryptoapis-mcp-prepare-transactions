@@ -1,4 +1,4 @@
-import type { CryptoApisHttpClient, RequestResult } from "@cryptoapis-io/mcp-shared";
+import type { CryptoApisHttpClient, McpLogger, RequestResult } from "@cryptoapis-io/mcp-shared";
 import type { McpToolDef } from "../types.js";
 import { PrepareTransactionsEvmToolSchema, type PrepareTransactionsEvmToolInput } from "./schema.js";
 import * as api from "../../api/evm/index.js";
@@ -20,7 +20,7 @@ Actions:
         "prepare-nft-transfer": nftCredits,
     },
     inputSchema: PrepareTransactionsEvmToolSchema,
-    handler: (client: CryptoApisHttpClient) => async (input: PrepareTransactionsEvmToolInput) => {
+    handler: (client: CryptoApisHttpClient, logger: McpLogger) => async (input: PrepareTransactionsEvmToolInput) => {
         const base = { blockchain: input.blockchain, network: input.network, context: input.context };
         let result: RequestResult<unknown>;
         switch (input.action) {
@@ -52,7 +52,20 @@ Actions:
                     tokenId: input.tokenId!,
                 });
                 break;
+            default:
+                throw new Error(`Unknown action: ${(input as Record<string, unknown>).action}`);
         }
+        logger.logInfo({
+            tool: "prepare_transactions_evm",
+            action: input.action,
+            blockchain: input.blockchain,
+            network: input.network,
+            creditsConsumed: result.creditsConsumed,
+            creditsAvailable: result.creditsAvailable,
+            responseTime: result.responseTime,
+            throughputUsage: result.throughputUsage,
+        });
+
         return {
             content: [
                 {

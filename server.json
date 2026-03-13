@@ -6,12 +6,12 @@
     "url": "https://github.com/CryptoAPIs-io/cryptoapis-mcp-prepare-transactions",
     "source": "github"
   },
-  "version": "0.2.3",
+  "version": "0.3.0",
   "packages": [
     {
       "registryType": "npm",
       "identifier": "@cryptoapis-io/mcp-prepare-transactions",
-      "version": "0.2.3",
+      "version": "0.3.0",
       "transport": {
         "type": "stdio"
       },
