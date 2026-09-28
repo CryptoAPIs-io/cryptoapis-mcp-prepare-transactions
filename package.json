@@ -38,7 +38,7 @@
     "cryptoapis-mcp-prepare-transactions": "dist/cli.js"
   },
   "dependencies": {
-    "@cryptoapis-io/mcp-shared": "^0.4.0",
+    "@cryptoapis-io/mcp-shared": "0.4.0",
     "@modelcontextprotocol/sdk": "^1.27.1",
     "zod": "^3.25.0"
   },
