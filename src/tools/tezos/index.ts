@@ -1,3 +1,4 @@
+import { READ_ONLY_TOOL } from "@cryptoapis-io/mcp-shared";
 import type { CryptoApisHttpClient, McpLogger, RequestResult } from "@cryptoapis-io/mcp-shared";
 import type { McpToolDef } from "../types.js";
 import { PrepareTransactionsTezosToolSchema, type PrepareTransactionsTezosToolInput } from "./schema.js";
@@ -15,6 +16,8 @@ Actions:
 
 export const prepareTransactionsTezosTool: McpToolDef<typeof PrepareTransactionsTezosToolSchema> = {
     name: "prepare_transactions_tezos",
+    title: "Prepare unsigned Tezos transaction",
+    annotations: READ_ONLY_TOOL,
     description: PREPARE_TEZOS_DESCRIPTION,
     credits: {
         "native-coins": nativeCoinsCredits,

@@ -1,3 +1,4 @@
+import { READ_ONLY_TOOL } from "@cryptoapis-io/mcp-shared";
 import type { CryptoApisHttpClient, McpLogger, RequestResult } from "@cryptoapis-io/mcp-shared";
 import type { McpToolDef } from "../types.js";
 import { PrepareTransactionsUtxoToolSchema, type PrepareTransactionsUtxoToolInput } from "./schema.js";
@@ -11,6 +12,8 @@ Actions:
 
 export const prepareTransactionsUtxoTool: McpToolDef<typeof PrepareTransactionsUtxoToolSchema> = {
     name: "prepare_transactions_utxo",
+    title: "Prepare unsigned UTXO transaction",
+    annotations: READ_ONLY_TOOL,
     description: PREPARE_UTXO_DESCRIPTION,
     credits: {
         "native-coins": nativeCoinsCredits,

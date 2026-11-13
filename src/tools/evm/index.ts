@@ -1,3 +1,4 @@
+import { READ_ONLY_TOOL } from "@cryptoapis-io/mcp-shared";
 import type { CryptoApisHttpClient, McpLogger, RequestResult } from "@cryptoapis-io/mcp-shared";
 import type { McpToolDef } from "../types.js";
 import { PrepareTransactionsEvmToolSchema, type PrepareTransactionsEvmToolInput } from "./schema.js";
@@ -8,6 +9,8 @@ import { credits as nftCredits } from "./prepare-nft-transfer/credits.js";
 
 export const prepareTransactionsEvmTool: McpToolDef<typeof PrepareTransactionsEvmToolSchema> = {
     name: "prepare_transactions_evm",
+    title: "Prepare unsigned EVM transaction",
+    annotations: READ_ONLY_TOOL,
     description: `Build unsigned EVM transactions ready for signing. Returns the raw unsigned transaction hex and fee details. After preparing, use a signing tool (e.g. evm_sign) to sign locally, then broadcast via broadcast_signed_transaction.
 
 Actions:

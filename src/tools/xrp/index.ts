@@ -1,3 +1,4 @@
+import { READ_ONLY_TOOL } from "@cryptoapis-io/mcp-shared";
 import type { CryptoApisHttpClient, McpLogger, RequestResult } from "@cryptoapis-io/mcp-shared";
 import type { McpToolDef } from "../types.js";
 import { PrepareTransactionsXrpToolSchema, type PrepareTransactionsXrpToolInput } from "./schema.js";
@@ -11,6 +12,8 @@ Actions:
 
 export const prepareTransactionsXrpTool: McpToolDef<typeof PrepareTransactionsXrpToolSchema> = {
     name: "prepare_transactions_xrp",
+    title: "Prepare unsigned XRP transaction",
+    annotations: READ_ONLY_TOOL,
     description: PREPARE_XRP_DESCRIPTION,
     credits: {
         "native-coins": nativeCoinsCredits,

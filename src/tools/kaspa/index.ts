@@ -1,3 +1,4 @@
+import { READ_ONLY_TOOL } from "@cryptoapis-io/mcp-shared";
 import type { CryptoApisHttpClient, McpLogger, RequestResult } from "@cryptoapis-io/mcp-shared";
 import type { McpToolDef } from "../types.js";
 import { PrepareTransactionsKaspaToolSchema, type PrepareTransactionsKaspaToolInput } from "./schema.js";
@@ -11,6 +12,8 @@ Actions:
 
 export const prepareTransactionsKaspaTool: McpToolDef<typeof PrepareTransactionsKaspaToolSchema> = {
     name: "prepare_transactions_kaspa",
+    title: "Prepare unsigned Kaspa transaction",
+    annotations: READ_ONLY_TOOL,
     description: PREPARE_KASPA_DESCRIPTION,
     credits: {
         "native-coins": nativeCoinsCredits,
